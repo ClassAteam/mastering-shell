@@ -1,0 +1,6 @@
+* petr@petr:~/bin$ bash -v ~/bin/hello2.sh gandon
+its just the verbose mode for executing the script mb for debug purposes
+* petr@petr:~/bin$ bash -x ~/bin/hello2.sh gandon
+but this is more commonly used
+* $ who | grep pi > /dev/null 2>&1 && write pi < message.txt
+we first use the who command to list the users who are logged on. We pipe the list to grep to search for the desired username. We are not interested in the output from the search, just its success or failure. Bearing this in mind, we redirect all our output to /dev/null. The double ampersand indicates that the second statement in the list runs only if the first returns true. If the pi user is logged on, we use write to message the user.

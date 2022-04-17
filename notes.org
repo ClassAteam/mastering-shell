@@ -1,0 +1,90 @@
+* Inbox
+** [2022-04-17 Вс 20:41] based on that we can build incredible useful scripts
+while read server
+do
+  ping -c1 "$server" && echo "Server up: $server" >> server.out
+done < $1
+cat server.out
+
+[[file:~/repo/mastering-shell/Chapter06/ping_server_from_file.sh::while read server
+do
+ ping -c1 "$server" && echo "Server up: $server" >> server.out
+done < $1
+cat server.out]]
+** [2022-04-17 Вс 20:36] looks like there is no difference between "server.out" name and "server" name
+while read server
+
+[[file:~/repo/mastering-shell/Chapter06/ping_server_from_file.sh::while read server]]
+** [2022-04-17 Вс 20:32] checking out the input for the file is file name or not
+if [ ! -f "$1" ] ; then
+
+[[file:~/repo/mastering-shell/Chapter06/ping_server_from_file.sh::if \[ ! -f "$1" \] ; then]]
+** [2022-04-17 Вс 19:05] Hot to iterrate through the dirctory
+for path in /home/likegeeks/*
+
+[[file:~/repo/mastering-shell/Chapter06/count_files.sh::for path in /home/likegeeks/*]]
+** [2022-04-17 Вс 18:57] How to iterate words in the file
+for var in $(cat $file)
+
+[[file:~/repo/mastering-shell/Chapter06/IFS2.sh::for var in $(cat $file)]]
+** [2022-04-17 Вс 18:42] example of for loop
+echo "You are using $(basename $0)"
+for n in $*
+
+[[file:~/repo/mastering-shell/Chapter06/hello9.sh::echo "You are using $(basename $0)"
+for n in $*]]
+** [2022-04-17 Вс 18:06] default assignment for variable
+name=${1-"Anonymous"}
+
+[[file:~/repo/mastering-shell/Chapter05/hello8.sh::name=${1-"Anonymous"}]]
+** [2022-04-17 Вс 14:58] The case statement allows for three operations:-counting the matching lines -printing the matching lines - printing all but the matching lines
+case $3 in
+
+[[file:~/repo/mastering-shell/Chapter03/search.sh::case $3 in]]
+** [2022-04-17 Вс 14:56] The next check uses a command-line list to exit the script if the file argument is not a regular file, using "test -f"
+[ ! -f $1 ] && exit 3
+
+[[file:~/repo/mastering-shell/Chapter03/search.sh::\[ ! -f $1 \] && exit 3]]
+** [2022-04-17 Вс 14:54] We start by checking for exactly three input arguments using the following code:
+if [ ! $# -eq 3 ] ; then
+    echo "$usage"
+    exit 2
+
+[[file:~/repo/mastering-shell/Chapter03/search.sh::if \[ ! $# -eq 3 \] ; then
+ echo "$usage"
+ exit 2]]
+** [2022-04-17 Вс 14:51] if first argument isnt file ???
+[ ! -f $1 ]
+[[file:~/repo/mastering-shell/Chapter03/search.sh::\[ ! -f $1 \]]]
+** [2022-04-17 Вс 14:46] how to check equality of arguments
+if [ ! $# -eq 2 ] ; then
+
+[[file:~/repo/mastering-shell/Chapter03/grade.sh::if \[ ! $# -eq 2 \] ; then]]
+** [2022-04-17 Вс 12:20] The code within the if statement will run only when the condition evaluates to true, and the end of the if block is denoted with fi-if backward.
+if [ $# -lt 1 ] ; then
+
+[[file:~/repo/mastering-shell/Chapter03/hello5.sh::if \[ $# -lt 1 \] ; then]]
+** [2022-04-17 Вс 11:45] Or, more simply, we could use the following:
+test -z $1
+[[file:~/repo/mastering-shell/Chapter03/hello4.sh::test -z $1]]
+** [2022-04-17 Вс 11:42] testing for a zero string value is useful when deciding if a variable is set:
+test -z $1
+[[file:~/repo/mastering-shell/Chapter03/hello4.sh::test -z $1]]
+** [2022-04-17 Вс 11:03] The test statement is looking for the $1 variable to be zero bytes. If it is, then we will not see the hello statement; otherwise, it will print hte hello message.
+test -z $1 || echo "Hello $1"
+
+[[file:~/repo/mastering-shell/Chapter03/hello4.sh::test -z $1 || echo "Hello $1"]]
+** [2022-04-17 Вс 08:25] find with pruned directory
+# The find command will copy files the match the
+# search criteria ie .sh . The -path, -prune and -o
+# options are to exclude the backdirectory from the
+# backup.
+find $HOME -path $HOME/$dir_name -prune -o \
+ -name "*$file_suffix" -exec cp {} $HOME/$dir_name/ \;
+
+[[file:~/repo/mastering-shell/Chapter02/backup.sh::The find command will copy files the match the
+# search criteria ie .sh . The -path, -prune and -o
+# options are to exclude the backdirectory from the
+# backup.
+find $HOME -path $HOME/$dir_name -prune -o \
+ -name "*$file_suffix" -exec cp {} $HOME/$dir_name/ \;]]
